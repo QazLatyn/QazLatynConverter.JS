@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>QazLatynHelper</title>
+    <style>
+        .box {
+            padding: 15px;
+            text-align: center;
+        }
+
+        textarea {
+            display: block;
+            width: 500px;
+            margin: auto;
+            text-align: left;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+
+        button {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            margin: .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <textarea id="data" rows="10"> БІРІНШІ СӨЗ
+    Бұл жасқа келгенше жақсы өткіздік пе, жаман өткіздік пе, әйтеуір бірталай өмірімізді өткіздік: алыстық, жұлыстық, айтыстық, тартыстық - әурешілікті көре-көре келдік. Енді жер ортасы жасқа келдік: қажыдық, жалықтық; қылып жүрген ісіміздің баянсызын, байлаусызын көрдік, бәрі қоршылық екенін білдік. Ал, енді қалған өмірімізді қайтіп, не қылып өткіземіз? Соны таба алмай өзім де қайранмын.</textarea>
+        <button id="convert"> Cyrl >> Latyn </button>
+        <textarea id="dest" rows="10"></textarea>
+    </div>
+
+    <script src="QazLatynConverter.min.js"></script>
+
+    <script>
+        var objData = document.getElementById("data");
+        var btn = document.getElementById("convert");
+        var objDest = document.getElementById("dest");
+        btn.onclick = function () {
+            var result = QazLatynConverter.Cyrl2Latyn(objData.value);
+            objDest.value = result;
+        };
+
+
+    </script>
+
+</body>
+</html>
